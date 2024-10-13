@@ -1,0 +1,287 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --primary-bg-color: rgb(13, 13, 58);
+    --secondary-bg-color: rgb(20, 20, 73);
+    --accent-color: rgb(100, 100, 238);
+    --text-color: white;
+    --highlight-color: cornflowerblue;
+    --shadow-color: darkslateblue;
+}
+html{
+    scroll-padding-top: 100px;
+}
+body{
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    font-family: sans-serif;
+}
+.fix-header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 55px;
+    background-color: var(--secondary-bg-color);
+}
+nav>div{
+    display: flex;
+}
+nav >div>p{
+    margin: 15px 0px;
+}
+nav > div > img{
+    width: 40px;
+    margin: 9px;
+}
+.left{
+    font-size: 1.5rem;
+    
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+}
+nav ul li{
+    list-style: none;
+    margin: 0 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+nav ul li a:focus {
+    outline: 2px solid var(--accent-color);
+}
+nav ul li a:hover{
+    color: var(--accent-color);
+    font-size: 1.1rem;
+}
+.home{
+    display: flex;
+    justify-content: space-around;
+    margin: 200px 0 300px;
+}
+.home > div{
+    width: 40%;
+}
+.leftsection{
+    font-size: 3rem;
+    margin: 100px 0;
+}
+.rightsection img{
+    width: 80%;
+    
+}
+.container{
+    margin: 0 auto;
+    max-width: 1200px;
+}
+main hr{
+    background-color: rgb(24, 24, 72);
+    margin: 20px 40;
+    border: 0;
+    height: 2px;
+}
+.skillsspan{
+    margin: 5px;
+    padding: 5px 0;
+    box-shadow: 0px 2px 6px 1px var(--shadow-color);
+    border-radius: 25%;
+    
+}
+.skillsspan > span{
+    margin-left: 45px;
+}
+ .skillsdiv{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    gap: 10px;
+ }
+.skillsspan img{
+    height: 150px;
+    width: 150px;
+}
+.h1class{
+    font-size: 2rem;
+    color: var(--highlight-color);
+}
+.pclass{
+    font-size: 1.5rem;
+    color: var(--highlight-color);
+}
+.contactsspan img{
+    height: 100px;
+    width: 100px;
+    margin: 27px;
+}
+.contactdiv{
+    justify-content: center;
+    margin: 165px 0;
+    display: flex;
+}
+.contactdiv2{
+    display: flex;
+}
+
+
+.imgclass{
+    background-color: var(--text-color);
+    border-radius: 50%;
+}
+.projectpclass{
+    text-align: center;
+    color: var(--highlight-color);
+}
+.projectpclass2{
+    line-break: anywhere;
+    margin: 10px;
+    text-align: center;
+    color: var(--highlight-color);
+}
+
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    border: solid;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.card-content p {
+    font-size: 1em;
+    color: #666;
+}
+.cards{
+    justify-content: space-between;
+    display: flex;
+    
+}
+.about{
+    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 65px 0;
+    align-items: center;
+}
+
+.aboutrightsection{
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.aboutrightsection div p{
+    color: cornflowerblue;
+    margin-bottom: 5px;
+}
+.aclass{
+    text-decoration: none;
+    color: cornflowerblue;
+}
+.contactsspan{
+    height: 250px;
+    width: 156px;
+}
+
+
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+    .cards{
+        margin: 80px 0px;
+    }
+    .container {
+        width: 80%;
+    }
+    .h1class{
+        text-align: center;
+        margin: 50px 0 0 0;
+    }
+    .aboutleftsection img {
+        width: 70vh;
+    }
+    .pclass{
+        text-align: center;
+    }
+    .skillsdiv{
+        margin: 90px 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        margin: 100px 0;
+    }
+
+    .home > div {
+        width: 100%;
+        margin-top: 130px;    }
+
+    .cards {
+        align-items: center;
+        flex-direction: column;
+        margin: 35px 0;
+    }
+
+    .aboutleftsection img {
+        width: 50vh;
+    }
+    .about{
+        flex-direction: column;
+    }
+    .h1class{
+        text-align: center;
+        margin: 50px 0 0 0px
+    }
+    .pclass{
+        margin-left: 50px ;
+    }
+    .skillsdiv{
+        margin: 90px 40px
+    }
+    .contactdiv
+    {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    nav{
+        height: 150px;
+    }
+    html{
+        scroll-padding-top: 150px;
+    }
+    .contactdiv{
+        align-items: center;
+    }
+    .contactdiv2{
+        justify-content: space-around;
+    }
+}
