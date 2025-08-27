@@ -1,53 +1,44 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', () => {
-
-    // Assuming data.js has been loaded and contains the following global variables:
+    // Assuming data.js contains:
     // personalInfo, skillsData, projectsData
 
-    // --- Core Functions for Creating Elements ---
-
-    function createSkillElement(skill) {
+    // --- Core Functions ---
+    const createSkillElement = (skill) => {
         const span = document.createElement('span');
         span.className = 'skillsspan';
         span.innerHTML = `
-            <img src="${skill.image}" alt="${skill.name.toLowerCase()}logo" />
+            <img src="${skill.image}" alt="${skill.name.toLowerCase()} logo" />
             <span>${skill.name}</span>
         `;
         return span;
-    }
+    };
 
-    function createProjectCard(project) {
+    const createProjectCard = (project) => {
         const card = document.createElement('div');
-        card.className = 'card';
-        const techList = project.tech.map(t => `<p>${t}</p>`).join('');
+        card.className = 'project-card';
         card.innerHTML = `
-            <h2 class="card-title">${project.title}</h2>
-            <div class="card-content">
-                <h3>Project Overview</h3>
-                <p>${project.overview}</p>
-                <h3>Your Role</h3>
-                <p>${project.role}</p>
-                <h3>Technologies and Tools Used</h3>
-                ${techList}
+            <img src="${project.image}" alt="${project.title}" class="project-image" />
+            <h3>${project.title}</h3>
+            <p>${project.overview}</p>
+            <div class="tech-stack">${project.tech.map(t => `<span>${t}</span>`).join('')}</div>
+            <div class="project-links">
+                <a href="${project.live}" target="_blank">Live Demo</a> | 
+                <a href="${project.github}" target="_blank">GitHub</a>
             </div>
         `;
         return card;
-    }
+    };
 
-    // --- Initial Content Population ---
-
-    // This function will handle both the initial render and the filtering.
-    const projectsContainer = document.getElementById('projectsContainer');
-    function renderProjects(projectsToRender) {
-        projectsContainer.innerHTML = ''; // Clear existing projects
+    const renderProjects = (projectsToRender) => {
+        const projectsContainer = document.getElementById('projectsContainer');
+        projectsContainer.innerHTML = '';
         projectsToRender.forEach(project => {
             projectsContainer.appendChild(createProjectCard(project));
         });
-    }
+    };
 
-    function populateContent() {
-        // Populate basic info
+    const populateContent = () => {
+        // Basic Info
         document.getElementById('headerName').textContent = personalInfo.name;
         document.getElementById('homeName').textContent = `I'm ${personalInfo.name.split(' ')[0]}`;
         document.getElementById('aboutDescription').textContent = personalInfo.description;
@@ -55,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('aboutDOB').textContent = personalInfo.dob;
         document.getElementById('aboutAddress').textContent = personalInfo.address;
 
-        // Populate contact info
+        // Contact Info
         document.getElementById('contactPhone').textContent = personalInfo.phone;
         document.getElementById('contactEmail').textContent = personalInfo.email;
         document.getElementById('contactLinkedin').href = personalInfo.linkedin;
@@ -63,27 +54,27 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('contactGithub').href = personalInfo.github;
         document.getElementById('contactGithub').textContent = personalInfo.github;
 
-        // Populate skills section
+        // Skills
         const skillsContainer = document.getElementById('skillsContainer');
         skillsData.forEach(skill => {
             skillsContainer.appendChild(createSkillElement(skill));
         });
-    }
+    };
 
     // --- Dynamic Features ---
 
-    // Filterable Projects
-    function setupProjectFilters() {
-        const technologies = [...new Set(projectsData.flatMap(project => project.tech))];
+    // ✅ Project Filters
+    const setupProjectFilters = () => {
         const filterButtonsContainer = document.createElement('div');
         filterButtonsContainer.className = 'filter-buttons';
-        projectsContainer.before(filterButtonsContainer);
+        document.getElementById('project').prepend(filterButtonsContainer);
 
         const allButton = document.createElement('button');
         allButton.textContent = 'All';
         allButton.className = 'filter-btn active';
         filterButtonsContainer.appendChild(allButton);
 
+        const technologies = [...new Set(projectsData.flatMap(project => project.tech))];
         technologies.forEach(tech => {
             const button = document.createElement('button');
             button.textContent = tech;
@@ -95,45 +86,85 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target.tagName === 'BUTTON') {
                 document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
                 e.target.classList.add('active');
+
                 const filterTech = e.target.textContent;
-                const filteredProjects = (filterTech === 'All') 
-                    ? projectsData 
+                const filteredProjects = (filterTech === 'All')
+                    ? projectsData
                     : projectsData.filter(project => project.tech.includes(filterTech));
                 renderProjects(filteredProjects);
             }
         });
-    }
+    };
 
-    // Smooth Scroll Animation
-    function setupSmoothScroll() {
+    // ✅ Smooth Scroll
+    const setupSmoothScroll = () => {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', (e) => {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             });
         });
-    }
+    };
 
-    // Sticky Header with State Change
-    function setupStickyHeader() {
+    // ✅ Sticky Header
+    const setupStickyHeader = () => {
         const header = document.querySelector('.fix-header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            header.classList.toggle('scrolled', window.scrollY > 50);
         });
-    }
+    };
+
+    // ✅ Dark/Light Mode with LocalStorage
+    const setupDarkModeToggle = () => {
+        const toggleBtn = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Load saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggleBtn.textContent = '☀️';
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            toggleBtn.textContent = isDark ? '☀️' : '🌙';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    };
+
+    // ✅ Highlight Active Section in Navbar
+    const setupActiveNavLink = () => {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 70;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    };
 
     // --- Initialization ---
-
-    // Call all setup functions when the DOM is ready
     populateContent();
     setupProjectFilters();
-    renderProjects(projectsData); // Initial render
+    renderProjects(projectsData);
     setupSmoothScroll();
     setupStickyHeader();
+    setupDarkModeToggle();
+    setupActiveNavLink();
 });
