@@ -1,123 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mohd Faiz</title>
-    <meta name="description" content="I’m an enthusiastic web developer..." />
-    <meta name="keywords" content="mohd faiz, web development, HTML, CSS, JavaScript, java, python" />
-    <meta name="author" content="Mohd Faiz" />
-    <link rel="icon" href="image/favicon-32x32.png" type="image/png" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohd Faiz - Full Stack Developer</title>
+  <meta name="description" content="I’m an enthusiastic Full Stack Web Developer with experience in HTML, CSS, JavaScript, React, Node.js, and more." />
+  <meta name="keywords" content="Mohd Faiz, Full Stack Developer, Web Development, HTML, CSS, JavaScript, React, Node.js, Python" />
+  <meta name="author" content="Mohd Faiz" />
+  <link rel="icon" href="image/favicon-32x32.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  <body>
-    <header class="fix-header">
-      <nav>
-        <div class="left">
-          <img src="image/adminicon.webp" alt="admin" />
-          <p id="headerName"></p>
-        </div>
-        <div class="right">
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#project">Project</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <section class="home" id="home">
-        <div class="leftsection">
-          <p>Hi,</p>
-          <p id="homeName">Faiz</p>
-          <p>Full Stack Developer</p>
-        </div>
-        <div class="rightsection">
-          <img src="image/developer.webp" alt="developer" />
-        </div>
-      </section>
-      <hr />
-      
-      <section class="container" id="about">
-        <h1 class="h1class">About Me</h1>
-        <p class="pclass" style="margin: 10px 0 0" id="aboutDescription"></p>
-        <div class="about">
-          <div class="aboutleftsection">
-            <img src="image/developer.webp" alt="profile" />
-          </div>
-          <div class="aboutrightsection">
-            <div>
-              <p>Name:</p>
-              <p>Date of Birth:</p>
-              <p>Address:</p>
-            </div>
-            <div>
-              <p id="aboutName"></p>
-              <p id="aboutDOB"></p>
-              <br />
-              <p id="aboutAddress"></p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <hr />
-      
-      <section class="skills container" id="skills">
-        <h1 class="h1class">My skills</h1>
-        <p class="pclass">Writing code using languages...</p>
-        <div class="skillsdiv" id="skillsContainer">
-          </div>
-      </section>
-      <hr />
-      
-      <section class="project container" id="project">
-        <h1 class="h1class">My Projects</h1>
-        <div class="projectdiv" id="projectsContainer">
-          </div>
-      </section>
-      <hr />
-      
-      <section class="contact container" id="contact">
-        <h1 class="h1class">Contact Faiz</h1>
-        <p class="pclass"></p>
-        <div class="contactdiv">
-          <div class="contactdiv2">
-            <span class="contactsspan">
-              <img src="image/phoneicon.svg" alt="Phone" class="imgclass" />
-              <p class="projectpclass">Phone</p>
-              <p class="projectpclass2" id="contactPhone"></p>
-            </span>
-            <span class="contactsspan">
-              <img src="image/mailicon.webp" alt="Mail" class="imgclass" />
-              <p class="projectpclass">Mail</p>
-              <p class="projectpclass2" id="contactEmail"></p>
-            </span>
-          </div>
-          <div class="contactdiv2">
-            <span class="contactsspan">
-              <img src="image/linkedinicon.webp" alt="Linkedin" class="imgclass" />
-              <p class="projectpclass">Linkedin</p>
-              <p class="projectpclass2">
-                <a id="contactLinkedin" class="aclass"></a>
-              </p>
-            </span>
-            <span class="contactsspan">
-              <img src="image/githublogo.webp" alt="Github" class="imgclass" />
-              <p class="projectpclass">GITHUB</p>
-              <p class="projectpclass2">
-                <a id="contactGithub" class="aclass"></a>
-              </p>
-            </span>
-          </div>
-        </div>
-      </section>
-    </main>
+<body>
+  <!-- ✅ Header Navigation -->
+  <header class="fix-header">
+    <nav>
+      <div class="left">
+        <img src="image/adminicon.webp" alt="admin" />
+        <p id="headerName">Mohd Faiz</p>
+      </div>
+      <div class="right">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-    <script src="data.js"></script>
-    <script src="script.js"></script>
-  </body>
+  <main>
+    <!-- ✅ Hero Section -->
+    <section class="home" id="home">
+      <div class="leftsection">
+        <p>Hi,</p>
+        <p id="homeName">I'm Faiz</p>
+        <p>Full Stack Developer</p>
+        <div class="cta-buttons">
+          <a href="#project" class="btn">View Projects</a>
+          <a href="resume.pdf" download class="btn">Download Resume</a>
+        </div>
+      </div>
+      <div class="rightsection">
+        <img src="image/developer.webp" alt="developer" />
+      </div>
+    </section>
+    <hr />
+
+    <!-- ✅ About Section -->
+    <section class="container" id="about">
+      <h1 class="h1class">About Me</h1>
+      <p class="pclass" id="aboutDescription">I am a passionate Full Stack Developer skilled in building dynamic and responsive web applications.</p>
+      <div class="about">
+        <div class="aboutleftsection">
+          <img src="image/developer.webp" alt="profile" />
+        </div>
+        <div class="aboutrightsection">
+          <div>
+            <p>Name:</p>
+            <p>Date of Birth:</p>
+            <p>Address:</p>
+          </div>
+          <div>
+            <p id="aboutName">Mohd Faiz</p>
+            <p id="aboutDOB">01-01-2000</p>
+            <p id="aboutAddress">Lucknow, India</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+
+    <!-- ✅ Skills Section -->
+    <section class="skills container" id="skills">
+      <h1 class="h1class">My Skills</h1>
+      <p class="pclass">Languages & Tools I work with:</p>
+      <div class="skillsdiv" id="skillsContainer">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>React</span>
+        <span>Node.js</span>
+        <span>MongoDB</span>
+        <span>MySQL</span>
+        <span>Git & GitHub</span>
+      </div>
+    </section>
+    <hr />
+
+    <!-- ✅ Projects Section -->
+    <section class="project container" id="project">
+      <h1 class="h1class">My Projects</h1>
+      <div class="projectdiv" id="projectsContainer">
+        <div class="project-card">
+          <img src="image/project1.jpg" alt="Project 1">
+          <h3>Portfolio Website</h3>
+          <p>A personal portfolio showcasing my skills and projects.</p>
+          <a href="#" target="_blank">Live Demo</a> | <a href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </section>
+    <hr />
+
+    <!-- ✅ Testimonials Section -->
+    <section class="container" id="testimonials">
+      <h1 class="h1class">Testimonials</h1>
+      <p class="pclass">What people say about me:</p>
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <p>"Faiz is an outstanding developer! Delivered the project on time and with great quality."</p>
+          <span>- Client Name</span>
+        </div>
+      </div>
+    </section>
+    <hr />
+
+    <!-- ✅ Blog Section -->
+    <section class="container" id="blog">
+      <h1 class="h1class">My Blog</h1>
+      <p class="pclass">Read my latest articles on web development:</p>
+      <div class="blog-container">
+        <div class="blog-card">
+          <h3>How to Build Responsive Websites</h3>
+          <a href="#">Read More</a>
+        </div>
+      </div>
+    </section>
+    <hr />
+
+    <!-- ✅ Contact Section -->
+    <section class="contact container" id="contact">
+      <h1 class="h1class">Contact Me</h1>
+      <div class="contactdiv">
+        <div class="contactdiv2">
+          <span class="contactsspan">
+            <img src="image/phoneicon.svg" alt="Phone" class="imgclass" />
+            <p class="projectpclass">Phone</p>
+            <p class="projectpclass2" id="contactPhone">+91 9876543210</p>
+          </span>
+          <span class="contactsspan">
+            <img src="image/mailicon.webp" alt="Mail" class="imgclass" />
+            <p class="projectpclass">Email</p>
+            <p class="projectpclass2" id="contactEmail">faiz@example.com</p>
+          </span>
+        </div>
+        <div class="contactdiv2">
+          <span class="contactsspan">
+            <img src="image/linkedinicon.webp" alt="Linkedin" class="imgclass" />
+            <p class="projectpclass">LinkedIn</p>
+            <p class="projectpclass2"><a href="#" id="contactLinkedin" class="aclass">linkedin.com/in/faiz</a></p>
+          </span>
+          <span class="contactsspan">
+            <img src="image/githublogo.webp" alt="Github" class="imgclass" />
+            <p class="projectpclass">GitHub</p>
+            <p class="projectpclass2"><a href="#" id="contactGithub" class="aclass">github.com/faiz123-pixel</a></p>
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ✅ Dark Mode Toggle -->
+  <button id="darkModeToggle">🌙</button>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
