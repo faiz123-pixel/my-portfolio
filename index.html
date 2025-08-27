@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohd Faiz</title>
+    <meta name="description" content="I’m an enthusiastic web developer..." />
+    <meta name="keywords" content="mohd faiz, web development, HTML, CSS, JavaScript, java, python" />
+    <meta name="author" content="Mohd Faiz" />
+    <link rel="icon" href="image/favicon-32x32.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="fix-header">
+      <nav>
+        <div class="left">
+          <img src="image/adminicon.webp" alt="admin" />
+          <p id="headerName"></p>
+        </div>
+        <div class="right">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#project">Project</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="home" id="home">
+        <div class="leftsection">
+          <p>Hi,</p>
+          <p id="homeName"></p>
+          <p>Full Stack Developer</p>
+        </div>
+        <div class="rightsection">
+          <img src="image/developer.webp" alt="developer" />
+        </div>
+      </section>
+      <hr />
+      
+      <section class="container" id="about">
+        <h1 class="h1class">About Me</h1>
+        <p class="pclass" style="margin: 10px 0 0" id="aboutDescription"></p>
+        <div class="about">
+          <div class="aboutleftsection">
+            <img src="image/developer.webp" alt="profile" />
+          </div>
+          <div class="aboutrightsection">
+            <div>
+              <p>Name:</p>
+              <p>Date of Birth:</p>
+              <p>Address:</p>
+            </div>
+            <div>
+              <p id="aboutName"></p>
+              <p id="aboutDOB"></p>
+              <br />
+              <p id="aboutAddress"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+      
+      <section class="skills container" id="skills">
+        <h1 class="h1class">My skills</h1>
+        <p class="pclass">Writing code using languages...</p>
+        <div class="skillsdiv" id="skillsContainer">
+          </div>
+      </section>
+      <hr />
+      
+      <section class="project container" id="project">
+        <h1 class="h1class">My Projects</h1>
+        <div class="projectdiv" id="projectsContainer">
+          </div>
+      </section>
+      <hr />
+      
+      <section class="contact container" id="contact">
+        <h1 class="h1class">Contact Faiz</h1>
+        <p class="pclass"></p>
+        <div class="contactdiv">
+          <div class="contactdiv2">
+            <span class="contactsspan">
+              <img src="image/phoneicon.svg" alt="Phone" class="imgclass" />
+              <p class="projectpclass">Phone</p>
+              <p class="projectpclass2" id="contactPhone"></p>
+            </span>
+            <span class="contactsspan">
+              <img src="image/mailicon.webp" alt="Mail" class="imgclass" />
+              <p class="projectpclass">Mail</p>
+              <p class="projectpclass2" id="contactEmail"></p>
+            </span>
+          </div>
+          <div class="contactdiv2">
+            <span class="contactsspan">
+              <img src="image/linkedinicon.webp" alt="Linkedin" class="imgclass" />
+              <p class="projectpclass">Linkedin</p>
+              <p class="projectpclass2">
+                <a id="contactLinkedin" class="aclass"></a>
+              </p>
+            </span>
+            <span class="contactsspan">
+              <img src="image/githublogo.webp" alt="Github" class="imgclass" />
+              <p class="projectpclass">GITHUB</p>
+              <p class="projectpclass2">
+                <a id="contactGithub" class="aclass"></a>
+              </p>
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
