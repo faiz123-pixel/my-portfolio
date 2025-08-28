@@ -114,7 +114,7 @@ nav {
 }
 
 .leftsection .role {
-  font-size: 24px;
+  font-size: 54px;
   color: #007bff;
   margin-bottom: 40px;
 }
@@ -127,7 +127,7 @@ nav {
 .download-btn {
   display: inline-block;
   padding: 14px 24px;
-  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  background:(45deg, #6a11cb, #2575fc);
   color: #fff;
   font-size: 18px;
   font-weight: bold;
@@ -139,7 +139,7 @@ nav {
 }
 
 .download-btn:hover {
-  background: linear-gradient(45deg, #2575fc, #6a11cb);
+  background:(45deg, #2575fc, #6a11cb);
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   border: 2px solid #fff;
