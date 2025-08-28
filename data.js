@@ -31,9 +31,9 @@ const projectsData = [
     overview: "A weather forecast website providing real-time weather updates using APIs, optimized for performance and cross-device compatibility.",
     role: "Front-end development, API integration, UI/UX design",
     tech: ["HTML", "CSS", "JavaScript", "React.js"],
-    liveDemo: "#", // Add live demo link
-    githubLink: "#", // Add GitHub repo link
-    image: "image/weather-project.webp" // Add thumbnail
+    liveDemo: "#", 
+    githubLink: "#",
+    image: "image/weather-project.webp"
   },
   {
     title: "Hind Handloom",
@@ -41,14 +41,14 @@ const projectsData = [
     overview: "An e-commerce platform offering a wide range of products including fashion, home essentials, and electronics.",
     role: "Full-stack development, backend integration, UI/UX design",
     tech: ["HTML", "CSS", "JavaScript", "Python (Django)"],
-    liveDemo: "#", // Add live demo link
+    liveDemo: "#",
     githubLink: "#",
     image: "image/handloom-project.webp"
   },
   {
     title: "Portfolio Website",
     category: "Web",
-    overview: "Personal portfolio website showcasing skills, projects, and contact details with dark mode toggle and smooth navigation.",
+    overview: "Personal portfolio website showcasing skills, projects, and contact details with smooth navigation.",
     role: "Frontend development and deployment",
     tech: ["HTML", "CSS", "JavaScript"],
     liveDemo: "https://faiz123-pixel.github.io/my-portfolio/",
@@ -57,7 +57,7 @@ const projectsData = [
   }
 ];
 
-// ✅ Function to Render Skills Dynamically
+// ✅ Render Skills Dynamically
 function renderSkills() {
   const skillsContainer = document.querySelector(".skillsdiv");
   skillsContainer.innerHTML = skillsData
@@ -69,10 +69,10 @@ function renderSkills() {
     `).join("");
 }
 
-// ✅ Function to Render Projects Dynamically
+// ✅ Render Projects Dynamically
 function renderProjects(filter = "All") {
   const projectsContainer = document.querySelector(".cards");
-  let filteredProjects = filter === "All" ? projectsData : projectsData.filter(project => project.category === filter);
+  const filteredProjects = filter === "All" ? projectsData : projectsData.filter(project => project.category === filter);
   
   projectsContainer.innerHTML = filteredProjects
     .map(project => `
@@ -90,7 +90,7 @@ function renderProjects(filter = "All") {
     `).join("");
 }
 
-// ✅ Event Listener for Filter Buttons
+// ✅ Filter Buttons Event
 document.querySelectorAll(".filter-btn").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
@@ -99,7 +99,7 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
   });
 });
 
-// ✅ Initial Render
+// ✅ Initial Render on Page Load
 document.addEventListener("DOMContentLoaded", () => {
   renderSkills();
   renderProjects();

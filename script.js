@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>${project.overview}</p>
             <div class="tech-stack">${project.tech.map(t => `<span>${t}</span>`).join('')}</div>
             <div class="project-links">
-                <a href="${project.live}" target="_blank">Live Demo</a> | 
-                <a href="${project.github}" target="_blank">GitHub</a>
+                ${project.live ? `<a href="${project.live}" target="_blank">Live Demo</a>` : ''}
+                ${project.github ? ` | <a href="${project.github}" target="_blank">GitHub</a>` : ''}
             </div>
         `;
         return card;
@@ -117,25 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // ✅ Dark/Light Mode with LocalStorage
-    const setupDarkModeToggle = () => {
-        const toggleBtn = document.getElementById('darkModeToggle');
-        const body = document.body;
-
-        // Load saved theme
-        if (localStorage.getItem('theme') === 'dark') {
-            body.classList.add('dark-mode');
-            toggleBtn.textContent = '☀️';
-        }
-
-        toggleBtn.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            const isDark = body.classList.contains('dark-mode');
-            toggleBtn.textContent = isDark ? '☀️' : '🌙';
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        });
-    };
-
     // ✅ Highlight Active Section in Navbar
     const setupActiveNavLink = () => {
         const sections = document.querySelectorAll('section');
@@ -165,6 +146,5 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProjects(projectsData);
     setupSmoothScroll();
     setupStickyHeader();
-    setupDarkModeToggle();
     setupActiveNavLink();
 });
