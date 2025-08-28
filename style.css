@@ -120,22 +120,31 @@ nav {
 }
 
 /* ✅ Download Resume Button */
+.resume-download {
+  margin-top: 20px;
+}
+
 .download-btn {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: #007bff;
+  display: inline-block;
+  padding: 14px 24px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
   color: #fff;
-  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
   text-decoration: none;
-  font-size: 16px;
-  border-radius: 6px;
-  transition: background 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
 }
 
 .download-btn:hover {
-  background: #0056b3;
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid #fff;
 }
+
 
 .rightsection {
   flex: 1;
