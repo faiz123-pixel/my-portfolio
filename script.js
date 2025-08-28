@@ -136,30 +136,5 @@ document.addEventListener('DOMContentLoaded', () => {
     renderProjects(projectsData); // Initial render
     setupSmoothScroll();
     setupStickyHeader();
-
-    // ✅ Toggle Menu on Mobile
-const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("show");
-});
-
-// ✅ Close menu when link is clicked (Mobile)
-document.querySelectorAll(".nav-links a").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
-  });
-});
-
-// ✅ Smooth Scroll for All Links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
-  });
-});
-
+    
 });

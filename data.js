@@ -1,43 +1,106 @@
+// ✅ Personal Information
 const personalInfo = {
   name: "Mohd Faiz",
   title: "Full Stack Developer",
   dob: "08/08/2001",
-  address: "Andheri(East), Mumbai",
+  address: "Andheri (East), Mumbai",
   email: "mo111faiz@gmail.com",
-  phone: "+917718029725",
+  phone: "+91 77180 29725",
   linkedin: "https://www.linkedin.com/in/mohd-faiz-16882b242",
   github: "https://github.com/faiz123-pixel",
-  description: "I’m an enthusiastic web developer with a passion for building responsive and user-friendly websites. As a recent Bsc.IT graduate from Mumbai University, I have a solid foundation in web development technologies, including HTML, CSS, JavaScript, and React.js."
+  description: "I’m an enthusiastic web developer with a passion for building responsive and user-friendly websites. As a recent B.Sc IT graduate from Mumbai University, I have a strong foundation in web development technologies, including HTML, CSS, JavaScript, and React.js."
 };
 
+// ✅ Skills Data
 const skillsData = [
-  { name: "Html", image: "image/htmllogo.webp" },
-  { name: "Css", image: "image/csslogo.webp" },
+  { name: "HTML", image: "image/htmllogo.webp" },
+  { name: "CSS", image: "image/csslogo.webp" },
   { name: "JavaScript", image: "image/jslogo.webp" },
-  { name: "React Js", image: "image/Reactlogo.webp" },
+  { name: "React.js", image: "image/Reactlogo.webp" },
   { name: "Python", image: "image/python.webp" },
   { name: "Java", image: "image/javalogo.webp" },
-  { name: "My SQL", image: "image/mysqllogo.webp" },
+  { name: "MySQL", image: "image/mysqllogo.webp" },
   { name: "GitHub", image: "image/githublogo.webp" }
 ];
 
+// ✅ Projects Data with Categories for Filtering
 const projectsData = [
   {
     title: "Weather Forecasting Web",
-    overview: "Developing a weather forecast website involves ensuring accurate data, managing API costs, optimizing performance, and addressing cross-device compatibility.",
-    role: "Leading the development, Back-end integration, front-end design, or data accuracy",
-    tech: ["HTML/CSS", "JavaScript", "React.js"]
+    category: "Web",
+    overview: "A weather forecast website providing real-time weather updates using APIs, optimized for performance and cross-device compatibility.",
+    role: "Front-end development, API integration, UI/UX design",
+    tech: ["HTML", "CSS", "JavaScript", "React.js"],
+    liveDemo: "#", 
+    githubLink: "#",
+    image: "image/weather-project.webp"
   },
   {
-    title: "Hind handloom",
-    overview: "At Hind handloom, we make online shopping simple, convenient, and enjoyable. Our extensive selection of products caters to all your needs, from the latest electronics to trendy fashion, home essentials, and more.",
-    role: "Leading the development, Back-end integration, front-end design, or data accuracy",
-    tech: ["HTML/CSS", "JavaScript", "Python (Django)"]
+    title: "Hind Handloom",
+    category: "Full-Stack",
+    overview: "An e-commerce platform offering a wide range of products including fashion, home essentials, and electronics.",
+    role: "Full-stack development, backend integration, UI/UX design",
+    tech: ["HTML", "CSS", "JavaScript", "Python (Django)"],
+    liveDemo: "#",
+    githubLink: "#",
+    image: "image/handloom-project.webp"
   },
   {
-    title: "Waiting...",
-    overview: "...",
-    role: "...",
-    tech: ["..."]
+    title: "Portfolio Website",
+    category: "Web",
+    overview: "Personal portfolio website showcasing skills, projects, and contact details with smooth navigation.",
+    role: "Frontend development and deployment",
+    tech: ["HTML", "CSS", "JavaScript"],
+    liveDemo: "https://faiz123-pixel.github.io/my-portfolio/",
+    githubLink: "https://github.com/faiz123-pixel/my-portfolio",
+    image: "image/portfolio-project.webp"
   }
 ];
+
+// ✅ Render Skills Dynamically
+function renderSkills() {
+  const skillsContainer = document.querySelector(".skillsdiv");
+  skillsContainer.innerHTML = skillsData
+    .map(skill => `
+      <div class="skillsspan">
+        <img src="${skill.image}" alt="${skill.name}">
+        <p>${skill.name}</p>
+      </div>
+    `).join("");
+}
+
+// ✅ Render Projects Dynamically
+function renderProjects(filter = "All") {
+  const projectsContainer = document.querySelector(".cards");
+  const filteredProjects = filter === "All" ? projectsData : projectsData.filter(project => project.category === filter);
+  
+  projectsContainer.innerHTML = filteredProjects
+    .map(project => `
+      <div class="card">
+        <img src="${project.image}" alt="${project.title}" class="project-img">
+        <h3 class="card-title">${project.title}</h3>
+        <p>${project.overview}</p>
+        <p><strong>Role:</strong> ${project.role}</p>
+        <p><strong>Tech:</strong> ${project.tech.join(", ")}</p>
+        <div class="card-links">
+          <a href="${project.liveDemo}" target="_blank">Live Demo</a>
+          <a href="${project.githubLink}" target="_blank">GitHub</a>
+        </div>
+      </div>
+    `).join("");
+}
+
+// ✅ Filter Buttons Event
+document.querySelectorAll(".filter-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderProjects(btn.dataset.filter);
+  });
+});
+
+// ✅ Initial Render on Page Load
+document.addEventListener("DOMContentLoaded", () => {
+  renderSkills();
+  renderProjects();
+});
