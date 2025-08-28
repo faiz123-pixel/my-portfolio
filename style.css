@@ -86,49 +86,96 @@ nav {
   color: #3498db;
 }
 
-/* Home Section */
+/* ✅ Home Section Layout */
 .home {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 60px 20px;
-  text-align: center;
+  padding: 80px 10%;
+  min-height: 90vh;
+  background: #f8f9fa;
 }
 
 .leftsection {
   flex: 1;
-  text-align: left;
+  position: relative;
 }
 
-.leftsection p:first-child {
-  font-size: 1.5em;
-  color: #7f8c8d;
+.leftsection .greeting {
+  font-size: 24px;
+  color: #444;
 }
 
-.leftsection p:nth-child(2) {
-  font-size: 3em;
+.leftsection h1 {
+  font-size: 48px;
   font-weight: bold;
-  color: #2c3e50;
-  margin: 5px 0;
+  margin: 10px 0;
+  color: #222;
 }
 
-.leftsection p:last-child {
-  font-size: 1.8em;
-  color: #3498db;
-  font-style: italic;
+.leftsection .role {
+  font-size: 24px;
+  color: #007bff;
+  margin-bottom: 40px;
+}
+
+/* ✅ Download Resume Button */
+.download-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #0056b3;
 }
 
 .rightsection {
   flex: 1;
-  text-align: right;
+  display: flex;
+  justify-content: center;
 }
 
 .rightsection img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  border-radius: 8px;
 }
+
+/* ✅ Responsive Design */
+@media screen and (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .leftsection h1 {
+    font-size: 36px;
+  }
+
+  .leftsection .role {
+    font-size: 20px;
+  }
+
+  .download-btn {
+    position: static;
+    margin-top: 20px;
+  }
+
+  .rightsection img {
+    max-width: 250px;
+    margin-top: 30px;
+  }
+}
+
 
 /* About Section */
 .about {
