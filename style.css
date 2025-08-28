@@ -91,7 +91,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 80px 10%;
+  padding: 0px 10%;
   min-height: 90vh;
   background: #f8f9fa;
 }
@@ -104,30 +104,30 @@ nav {
 .leftsection .greeting {
   font-size: 30px;
   color: #444;
+  margin: 0px;
 }
 
 .leftsection h1 {
   font-size: 48px;
   font-weight: bold;
-  margin: 10px 0;
+  margin: 30px 0;
   color: #222;
 }
 
 .leftsection .role {
   font-size: 40px;
   color: #007bff;
-  margin-bottom: 40px;
 }
 
 /* ✅ Download Resume Button */
 .resume-download {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .download-btn {
   display: inline-block;
-  padding: 14px 24px;
-  background:(45deg, #6a11cb, #2575fc);
+  padding: 5px;
+  background:#8d32ee;
   color: #fff;
   font-size: 18px;
   font-weight: bold;
@@ -181,7 +181,7 @@ nav {
 
   .rightsection img {
     max-width: 250px;
-    margin-top: 30px;
+    margin-bottom: 100px;
   }
 }
 
