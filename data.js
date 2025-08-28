@@ -30,39 +30,41 @@ const projectsData = [
     category: "Web",
     overview: "A weather forecast website providing real-time weather updates using APIs, optimized for performance and cross-device compatibility.",
     role: "Front-end development, API integration, UI/UX design",
-    tech: ["HTML", "CSS", "JavaScript", "React.js"],
-    liveDemo: "#", 
-    githubLink: "#",
-    image: "image/weather-project.webp"
+    tech: ["HTML", "CSS", "JavaScript", "React.js"], 
+    
   },
   {
     title: "Hind Handloom",
     category: "Full-Stack",
     overview: "An e-commerce platform offering a wide range of products including fashion, home essentials, and electronics.",
     role: "Full-stack development, backend integration, UI/UX design",
-    tech: ["HTML", "CSS", "JavaScript", "Python (Django)"],
-    liveDemo: "#",
-    githubLink: "#",
-    image: "image/handloom-project.webp"
+    tech: ["HTML", "CSS", "JavaScript", "Python (Django)","MongoDB"],
+    
   },
   {
     title: "Portfolio Website",
     category: "Web",
     overview: "Personal portfolio website showcasing skills, projects, and contact details with smooth navigation.",
-    role: "Frontend development and deployment",
+    role: "Full-stack development, backend integration, UI/UX design",
     tech: ["HTML", "CSS", "JavaScript"],
-    liveDemo: "https://faiz123-pixel.github.io/my-portfolio/",
-    githubLink: "https://github.com/faiz123-pixel/my-portfolio",
-    image: "image/portfolio-project.webp"
+    
+  },
+  {
+    title: "Car Booking App",
+    category: "MObile App",
+    overview: "Developed a full-featured mobile app for car booking with secure authentication and real-time booking management.",
+    role: "Full-stack development, backend integration, UI/UX design",
+    tech: ["HTML", "CSS", "JavaScript","React Native","MySQL"],
+    
   }
 ];
 
 // ✅ Render Skills Dynamically
 function renderSkills() {
-  const skillsContainer = document.querySelector(".skillsdiv");
+  const skillsContainer = document.getElementById("skillsContainer");
   skillsContainer.innerHTML = skillsData
     .map(skill => `
-      <div class="skillsspan">
+      <div class="skill-card">
         <img src="${skill.image}" alt="${skill.name}">
         <p>${skill.name}</p>
       </div>
@@ -70,25 +72,22 @@ function renderSkills() {
 }
 
 // ✅ Render Projects Dynamically
-function renderProjects(filter = "All") {
-  const projectsContainer = document.querySelector(".cards");
-  const filteredProjects = filter === "All" ? projectsData : projectsData.filter(project => project.category === filter);
-  
-  projectsContainer.innerHTML = filteredProjects
-    .map(project => `
-      <div class="card">
-        <img src="${project.image}" alt="${project.title}" class="project-img">
-        <h3 class="card-title">${project.title}</h3>
+function renderProjects() {
+  const projectsContainer = document.getElementById("projectsContainer");
+
+  projectsContainer.innerHTML = projectsData.map(project => `
+    <div class="project-card">
+      <div class="project-content">
+        <h3>${project.title}</h3>
         <p>${project.overview}</p>
-        <p><strong>Role:</strong> ${project.role}</p>
         <p><strong>Tech:</strong> ${project.tech.join(", ")}</p>
-        <div class="card-links">
-          <a href="${project.liveDemo}" target="_blank">Live Demo</a>
-          <a href="${project.githubLink}" target="_blank">GitHub</a>
+        <div class="project-links">
         </div>
       </div>
-    `).join("");
+    </div>
+  `).join("");
 }
+
 
 // ✅ Filter Buttons Event
 document.querySelectorAll(".filter-btn").forEach(btn => {

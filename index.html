@@ -48,79 +48,99 @@
 
       <hr />
       
-      <section class="container" id="about">
+      <section class="about-section" id="about">
         <h1 class="h1class">About Me</h1>
-        <p class="pclass" style="margin: 10px 0 0" id="aboutDescription"></p>
-        <div class="about">
-          <div class="aboutleftsection">
-            <img src="image/developer.webp" alt="profile" />
+        <p class="pclass" id="aboutDescription"></p>
+
+        <div class="about-container">
+          <!-- Left Side (Image) -->
+          <div class="about-left">
+            <img src="image/developer.webp" alt="Profile Picture" />
           </div>
-          <div class="aboutrightsection">
-            <div>
-              <p>Name:</p>
-              <p>Date of Birth:</p>
-              <p>Address:</p>
-            </div>
-            <div>
-              <p id="aboutName"></p>
-              <p id="aboutDOB"></p>
-              <br />
-              <p id="aboutAddress"></p>
-            </div>
+        
+          <!-- Right Side (Details) -->
+          <div class="about-right">
+            <h2 id="aboutName">Mohd Faiz</h2>
+            <p><strong>Date of Birth:</strong> <span id="aboutDOB">08/08/2001</span></p>
+            <p><strong>Address:</strong> <span id="aboutAddress">Andheri (East), Mumbai</span></p>
+            <p>
+              I’m an enthusiastic web developer with a passion for building responsive 
+              and user-friendly websites. As a recent B.Sc IT graduate, I specialize in 
+              modern web technologies like HTML, CSS, JavaScript, and React.js.
+            </p>
           </div>
         </div>
       </section>
+
       <hr />
       
-      <section class="skills container" id="skills">
-        <h1 class="h1class">My skills</h1>
-        <p class="pclass">Writing code using languages...</p>
-        <div class="skillsdiv" id="skillsContainer">
-          </div>
+      <section class="skills-section container" id="skills">
+        <h1 class="h1class">My Skills</h1>
+        <p class="pclass">Technologies and tools I work with to build amazing projects.</p>
+
+        <div class="skills-grid" id="skillsContainer">
+          <!-- Skills will be rendered dynamically by JavaScript -->
+        </div>
       </section>
+
       <hr />
       
-      <section class="project container" id="project">
+      <section class="projects-section container" id="project">
         <h1 class="h1class">My Projects</h1>
-        <div class="projectdiv" id="projectsContainer">
-          </div>
+        <p class="pclass">A showcase of my recent work using modern technologies.</p>
+
+        <!-- Project Cards -->
+        <div class="projects-grid" id="projectsContainer">
+          <!-- Projects will be dynamically rendered -->
+        </div>
       </section>
+
       <hr />
       
       <section class="contact container" id="contact">
-        <h1 class="h1class">Contact Faiz</h1>
-        <p class="pclass"></p>
-        <div class="contactdiv">
-          <div class="contactdiv2">
-            <span class="contactsspan">
-              <img src="image/phoneicon.svg" alt="Phone" class="imgclass" />
-              <p class="projectpclass">Phone</p>
-              <p class="projectpclass2" id="contactPhone"></p>
-            </span>
-            <span class="contactsspan">
-              <img src="image/mailicon.webp" alt="Mail" class="imgclass" />
-              <p class="projectpclass">Mail</p>
-              <p class="projectpclass2" id="contactEmail"></p>
-            </span>
-          </div>
-          <div class="contactdiv2">
-            <span class="contactsspan">
-              <img src="image/linkedinicon.webp" alt="Linkedin" class="imgclass" />
-              <p class="projectpclass">Linkedin</p>
-              <p class="projectpclass2">
-                <a id="contactLinkedin" class="aclass"></a>
-              </p>
-            </span>
-            <span class="contactsspan">
-              <img src="image/githublogo.webp" alt="Github" class="imgclass" />
-              <p class="projectpclass">GITHUB</p>
-              <p class="projectpclass2">
-                <a id="contactGithub" class="aclass"></a>
-              </p>
-            </span>
-          </div>
+        <h1 class="h1class">Contact Me</h1>
+        <p class="pclass">Click below to connect with me:</p>
+            
+        <div class="contact-grid">
+          <!-- Phone -->
+          <a href="tel:+917718029725" class="contact-card">
+            <img src="image/phoneicon.svg" alt="Phone" class="contact-icon" />
+            <div>
+              <h3>Phone</h3>
+              <p id="contactPhone">+91 7718029725</p>
+            </div>
+          </a>
+        
+          <!-- Email -->
+          <a href="mailto:mo111faiz@gmail.com" class="contact-card">
+            <img src="image/mailicon.webp" alt="Mail" class="contact-icon" />
+            <div>
+              <h3>Email</h3>
+              <p id="contactEmail">mo111faiz@gmail.com</p>
+            </div>
+          </a>
+        
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/mohd-faiz-16882b242" class="contact-card" target="_blank">
+            <img src="image/linkedinicon.webp" alt="LinkedIn" class="contact-icon" />
+            <div>
+              <h3>LinkedIn</h3>
+              <p>Visit Profile</p>
+            </div>
+          </a>
+        
+          <!-- GitHub -->
+          <a href="https://github.com/faiz123-pixel" class="contact-card" target="_blank">
+            <img src="image/githublogo.webp" alt="GitHub" class="contact-icon" />
+            <div>
+              <h3>GitHub</h3>
+              <p>View Repos</p>
+            </div>
+          </a>
         </div>
       </section>
+      
+
     </main>
 
     <script src="data.js"></script>
