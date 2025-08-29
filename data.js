@@ -1,6 +1,6 @@
 // ✅ Personal Information
 const personalInfo = {
-  // name: "mohd Faiz",
+  name: "Mohd Faiz",
   title: "Full Stack Developer",
   dob: "08/08/2001",
   address: "Andheri (East), Mumbai",
